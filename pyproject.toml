@@ -1,0 +1,23 @@
+[project]
+name = "aimouse"
+version = "1.0.0"
+description = "Control your mouse, scroll and volume with hand gestures using MediaPipe and OpenCV"
+requires-python = ">=3.9"
+dependencies = ["opencv-python>=4.8", "mediapipe>=0.10,<0.11", "numpy>=1.24", "pyautogui>=0.9.54"]
+
+[project.scripts]
+aimouse = "aimouse.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
